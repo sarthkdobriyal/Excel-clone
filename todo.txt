@@ -1,0 +1,82 @@
+1) Structuring (using HTML + CSS)
+2) Adding features for each cell such as making text bold, changing color etc
+    => 2 way binding == on modifying any property -> change data in storage -> change in ui
+    => Using 2D matrix to store cause grid is also in matrix form
+    =>representing cell properties as js objects in the 2d MATRIX 
+    => For cell and storage identification using rowId and colId
+    =>on props click modify-> 
+        -> access active cell 
+            ->using address bar -> decode the address to get indexes
+            -> get cell active using rid and colId
+        -> storage  
+            -> use the same rid and cid
+    => On cell click
+        -> perform ui changes -> properties container
+                              -> cell   using storage
+3) Formula implementation
+    ->use blur event to store the data of each cell 
+    =>Formula Evaluation
+        ->Normal Expression 
+            ->eg - 10+20;
+        ->Dependency Expression
+            -> eg - A1 + A2;
+        
+        -> use eval() function
+        -> Decode and Access value
+        -> using ascii value to differentiate between dependency formula and normal expression
+        -> decode the address in the formula to get value using DB and replace it in the encoded formula
+            to make decoded formula then eval that decodeFormula
+
+    => if a cell is dependent on some cell and value changes in that cell it should be reflected in the current cell
+        -> achieving this recursively
+        -> 1. Establish Parent-Child relationship (children array in ever cell property)
+            2.add current cell to children array of cell in formula
+
+
+4) cycle formation and detection (Graph Algorithm)
+        ->Directed Graph 
+            nodes are cells
+        -> cycle detection  
+                => suppose:
+                    A1 = 10;
+                    B1 = A1 + 10;
+                    c1 = B1 + 10;
+                    now if changed formula of A1 = c1 + 10
+                    This is a cycle as c1 was indirectly dependent on A1 and now A1 is also dependent on c1.
+                    the code would be stuck in a loop and we will encounter stack overflow
+        
+        -> ALgorithm for cycle detection in directed Graph:
+            1. take two array visited and dfsVisited(for current component)
+            2. if any node forms a cycle entire graph is cyclic
+            3. on node visit mark vis[node] = true & dfsVisit[node] = true(Stack Trace);
+            4. on  already visited[node] go back
+            5. on leaving a node mark dfsVis[node] = false;
+            6. if vis[node] = true && dfsVisit[node] = true => cycle detected 
+
+
+5) Implementation:
+    -> 2D array
+    -> Decoded Child array
+    
+6) Tracing cyclic  formula  
+using the same algo but instead of looping through all cells we loop through only the cell where our cycle is detected
+    using async/await
+    wrapping setTimeout in promises
+7) adding multiple sheets
+    -> Load data of the current sheet in the ui
+    -> need to generate diff cellProps for each sheet
+    -> array of sheets containing data of each sheet
+
+8) Cut Copy Paste
+    -> select a range (using ctrl+ click)
+        => keep a storage to fix two points and to determine range (array) containing top-left cell idx and bottom-right idx
+    -> Copy
+        =>use a storage again -> matrix containing cellProps objects
+        => 
+    --> Paste
+        -> select a cell
+        -> then using simple calculation paste the matrix data in that cell from copyData
+    --> cut (Remove from DB)
+        ->almost same as copyData
+
+9) open and save

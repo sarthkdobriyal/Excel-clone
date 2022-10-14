@@ -1,0 +1,10 @@
+Excel Clone Features
+    => Heavy css for clean ui
+    => heavy Dom
+    => Two way binding (Manipulation in both ui & storage)
+    => Formula Evaluation
+    => Formula cycle validation
+    => cycle validation for color tracking
+    => multiple sheet handling
+    =>NEw open download sheets
+    =>cut copy paste in multiple cells
