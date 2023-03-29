@@ -1,8 +1,17 @@
-# MS EXCEL CLONE -- created by: Sarthak Dobriyal
+# MS EXCEL CLONE -
+## Core Development Work:
+The spreadsheet editor project involved building a web-based application that allows users to edit and manipulate data in a spreadsheet format. The core development work included creating the user interface with HTML and CSS, implementing the logic using Vanilla JavaScript, and integrating the functionality for text manipulations, adding multiple sheets, uploading/downloading sheets, and writing formulas for mathematical calculations using cells.
 
-- Microsoft Excel is a spreadsheet developed by Microsoft for Windows, macOS, Android and iOS. It features calculation or computation capabilities
+## Responsibilities:
+The development team was responsible for designing and implementing the front-end and back-end functionalities of the spreadsheet editor. This involved creating the user interface, implementing the data manipulation logic, and ensuring that the application runs smoothly on different web browsers and platforms. The team also had to ensure that the application was user-friendly and intuitive, allowing users to perform various spreadsheet operations with ease.
 
-- This clone covers a lot of features same as the excel spreadsheet which are explained in further points
+## Challenges:
+One of the major challenges in building the spreadsheet editor was implementing the formula bar and the logic for performing mathematical calculations using cells. The team had to ensure that the application could handle complex formulas with multiple operators and operands. Another challenge was implementing the cyclicity check using graph algorithms to prevent infinite loops and crashes when working with circular references in formulas. Additionally, ensuring cross-browser compatibility and responsiveness of the application were also significant challenges.
+
+## Achievements:
+The team successfully built a web-based spreadsheet editor that allows users to perform various spreadsheet operations such as text manipulations, adding multiple sheets, uploading/downloading sheets, and writing formulas for mathematical calculations. The application was designed to be user-friendly and intuitive, allowing users to perform these operations with ease. The cyclicity check implemented using graph algorithms was a significant achievement as it prevented the application from crashing due to circular references in formulas. Overall, the project was a success and provided a valuable tool for users to manipulate and manage data in a spreadsheet format.
+
+## All the features and steps to use
 
 - Any cell can be clicked to type in text in the cell and it will be saved.
 
