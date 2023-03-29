@@ -1,4 +1,4 @@
-# MS EXCEL CLONE -
+# MS EXCEL CLONE 
 ## Core Development Work:
 The spreadsheet editor project involved building a web-based application that allows users to edit and manipulate data in a spreadsheet format. The core development work included creating the user interface with HTML and CSS, implementing the logic using Vanilla JavaScript, and integrating the functionality for text manipulations, adding multiple sheets, uploading/downloading sheets, and writing formulas for mathematical calculations using cells.
 
